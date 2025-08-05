@@ -1,12 +1,3 @@
---/Problem Title: Department-Course Subquery and Access Control
---/Design normalized tables for departments and the courses they offer, maintaining a
---/foreign key relationship.
---/Insert five departments and at least ten courses across those departments.
---/Use a subquery to count the number of courses under each department.
---/Filter and retrieve only those departments that offer more than two courses.
---/Grant SELECT-only access on the courses table to a specific user.
-
-
 CREATE TABLE Departments (
     dept_id INT PRIMARY KEY,
     dept_name VARCHAR(100) NOT NULL
@@ -47,3 +38,4 @@ WHERE dept_id IN (
     GROUP BY dept_id
     HAVING COUNT(course_id) > 2
 );
+
