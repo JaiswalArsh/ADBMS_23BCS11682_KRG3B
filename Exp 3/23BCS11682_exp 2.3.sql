@@ -1,0 +1,20 @@
+--EXPERIMENT 03: Merging Employee Histories: Who Earned Least? (Hard)
+
+CREATE TABLE A( empid integer, Ename VARCHAR(20), Salary INTEGER);
+CREATE TABLE B(empid integer, Ename VARCHAR(20), Salary INTEGER);
+
+INSERT INTO A VALUES
+(1,'AA',1000),
+(2,'BB',300);
+
+INSERT INTO b VALUES
+(2,'BB',400),
+(3,'CC',100);
+
+SELECT EMPID,Max(ENAME) AS ENAME,MIN(SALARY) AS SALARY
+FROM(
+SELECT * FROM A 
+UNION ALL 
+SELECT * FROM B
+) AS INTERMEDIATE_RESULT
+GROUP BY empid
