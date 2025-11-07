@@ -5,7 +5,7 @@
 show dbs;
 
 // 2. Create or switch to database
-use db_ayush;
+use db_aj;
 
 // 3. Verify current database
 db;
